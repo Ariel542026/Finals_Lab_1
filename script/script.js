@@ -1,45 +1,60 @@
+alert("Dangal Greetings! Welcome to our Student Score Evaluator.");
 
-alert("Welcome to the Grade Analyzer!");
+// onClick function
+function btnfunction() {
+    let name;
+    let remark;
+    let score;
+    let choice;
 
-let name = prompt("Enter your name:");
-let score = prompt("Enter your score:");
+    // validate name
+    do {
+        name = prompt("Enter your name:");
 
-if (name === "" || score === "") {  
-    document.getElementById("result").innerHTML =
-        "Invalid input. Please enter both your name and score.";
+        if (name === null) {
+            alert("Evaluation cancelled.");
+            break;
+        } 
+        else if (!isNaN(name) || name.trim() === "") {
+            alert("Please enter a valid name.");
+        }
+    } while(name.trim() === "" || !isNaN(name));
 
-} else if (score <= 0 || score > 100 || isNaN(score)) {
-    document.getElementById("result").innerHTML =
-        "Invalid score.";
+    // ask user to enter score
+    if (name != null) {
+        do {
+            score = prompt("Enter your score:");
 
-} else {
-    let proceed = confirm("Do you want to continue?");
+            if (score == null) {
+                alert("Evaluation cancelled.");
+                break;
+            } else if (score.trim() == "" || isNaN(score) || score <= 0 || score > 100) {
+                alert("Invalid score! Please enter a valid score between 1 to 100.");
+            } else {
+                remark = evaluateScore(score);
+            }
+        } while(score.trim() == "" || isNaN(score) || score <= 0 || score > 100);
+    }
 
-    if (proceed) {
-        let result = evaluateScore(score);
+    // validate score
+    if (score != null) {
+        choice = confirm("Do you want to continue?");
 
-        document.getElementById("result").innerHTML =
-            "Name: " + name + "<br>" +
-            "Score: " + score + "<br>" +
-            "Remark: " + result;
-
-    } else {
-        document.getElementById("result").innerHTML =
-            "Operation cancelled.";
+        if (choice) {
+            document.getElementById("result").innerHTML =
+                "<p><strong>Name:</strong> " + name + "</p>" +
+                "<p><strong>Score:</strong> " + score + "</p>" +
+                "<p><strong>Remarks:</strong> " + remark + "</p>";
+        }
+        else {
+            alert("Evaluation cancelled.");
+        }
     }
 }
 
-
 function evaluateScore(score) {
 
-    if (score >= 90 && score <= 100) {
-        return "Excellent";
-    } else if (score >= 75 && score <= 89) {
-        return "Passed";
-    } else if (score < 75) {
-        return "Failed";
-    } else {
-        return "Invalid score";
-    }
-
+    if (score >= 90 && score <= 100) { return "Excellent"; }
+    else if (score >= 75) { return "Passed"; } 
+    else { return "Failed"; }
 }
