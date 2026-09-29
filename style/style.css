@@ -11,7 +11,7 @@ body {
 
 /* Header */
 header {
-    background-color: #1e3a8a;
+    background-color: #2f3c5e;
     color: white;
     text-align: center;
     padding: 25px 15px;
@@ -43,7 +43,7 @@ section {
 }
 
 h2 {
-    color: #1e3a8a;
+    color: #2f3c5e;
     margin-top: 0;
 }
 
@@ -53,7 +53,7 @@ p {
 
 /* Button */
 button {
-    background-color: #2563eb;
+    background-color: #2f3c5e;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -61,10 +61,11 @@ button {
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
+    transition: background-color 0.35s ease-in-out;
 }
 
 button:hover {
-    background-color: #1d4ed8;
+    background-color: #65708b;
 }
 
 /* Result area */
@@ -96,12 +97,12 @@ td {
 
 th {
     background-color: #dbeafe;
-    color: #1e3a8a;
+    color: #2f3c5e;
 }
 
 /* Footer */
 footer {
-    background-color: #1e3a8a;
+    background-color: #2f3c5e;
     color: white;
     text-align: center;
     padding: 10px;
