@@ -3,26 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Grade Analyzer</title>
-
-    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <title>Score Evaluator</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
-
 <body>
 
-    <div class="container">
+    <header>
+        <h1>Student Score Evaluator</h1>
+    </header>
 
-        <div class="result-box">
-            <h2>Grade Analyzer</h2>
+    <main>
+        <section class="intro">
+            <h2>Welcome to the Score Evaluator!</h2>
+            <p>
+                This program evaluates a student's score
+                and displays the corresponding remark.
+            </p>
 
-            <p id="result">Grade analysis will appear here</p>
-        </div>
+            <button onclick="btnfunction()" id="startBtn">Start Evaluation</button>
+        </section>
 
-    </div>
+        <section class="result-section">
+            <h2>Evaluation Result</h2>
+
+            <div id="result">
+                <p>Your result will appear here.</p>
+            </div>
+        </section>
+
+        <section class="grading">
+            <h2>Grading System</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Score</th>
+                        <th>Remark</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>90–100</td>
+                        <td>Excellent</td>
+                    </tr>
+
+                    <tr>
+                        <td>75–89</td>
+                        <td>Passed</td>
+                    </tr>
+
+                    <tr>
+                        <td>Below 75</td>
+                        <td>Failed</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Group 12 - Laboratory Activity 1</p>
+    </footer>
 
     <script src="script/script.js"></script>
-
 </body>
 </html>
