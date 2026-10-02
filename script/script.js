@@ -15,10 +15,10 @@ function btnfunction() {
             alert("Evaluation cancelled.");
             break;
         } 
-        else if (!isNaN(name) || name.trim() === "") {
+        else if (!isNaN(name) || name.trim() === "" || !/^[a-zA-Z0-9]+$/.test(name)) {
             alert("Please enter a valid name.");
         }
-    } while(name.trim() === "" || !isNaN(name));
+    } while(name.trim() === "" || !isNaN(name) || !/^[a-zA-Z0-9]+$/.test(name));
 
     // ask user to enter score
     if (name != null) {
@@ -53,7 +53,7 @@ function btnfunction() {
 }
 
 function evaluateScore(score) {
-
+    
     if (score >= 90 && score <= 100) { return "Excellent"; }
     else if (score >= 75) { return "Passed"; } 
     else { return "Failed"; }
